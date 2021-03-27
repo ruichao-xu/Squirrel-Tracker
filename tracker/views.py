@@ -21,3 +21,12 @@ def sightings(request):
             }
 
     return render(request, 'tracker/sightings.html',context)
+
+def stat(request):
+    squirrels = Squirrel.objects.all()
+    context = {
+            'squirrels': squirrels,
+            }
+
+    return render(request, 'tracker/stat.html', context)
+
