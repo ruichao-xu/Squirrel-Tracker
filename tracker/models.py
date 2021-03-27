@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 class Squirrel(models.Model):
 
@@ -38,5 +39,4 @@ class Squirrel(models.Model):
     Lat_Long = models.CharField(max_length = 80)
 
     def __str__(self):
-        return self.Unique_Squirrel_ID
-
+        return f"ID: {self.Unique_Squirrel_ID} Date: {self.Date}"

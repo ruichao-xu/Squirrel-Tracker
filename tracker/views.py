@@ -13,3 +13,11 @@ def map(request):
             }
 
     return render(request, 'tracker/map.html',context)
+
+def sightings(request):
+    squirrels = Squirrel.objects.all()
+    context = {
+            'squirrels': squirrels,
+            }
+
+    return render(request, 'tracker/sightings.html',context)
