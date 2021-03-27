@@ -38,3 +38,6 @@ def detail(request,Unique_ID):
 
     return render(request, 'tracker/detail.html',context)
 
+def add(request):
+    return render(request, 'tracker/add.html',{})
+

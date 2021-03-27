@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
         <body>
+	<p><a href="{% url 'tracker:add' %}">Add More Sightings</a>
 	<ul>
 		{% for squirrel in squirrels %}
-		<li> <a href="{% url 'project:detail' squirrel.Unique_Squirrel_ID %}">{{ squirrel }} </a></li>
+		<li> <a href="{% url 'tracker:detail' squirrel.Unique_Squirrel_ID %}">{{ squirrel }} </a></li>
 		{% endfor %}
 	</ul>
 	</body>
