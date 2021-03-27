@@ -30,3 +30,11 @@ def stat(request):
 
     return render(request, 'tracker/stat.html', context)
 
+def detail(request,Unique_ID):
+    squirrel = get_object_or_404(Squirrel, Unique_Squirrel_ID=Unique_ID)
+    context = {
+            'squirrel':  squirrel,
+            }
+
+    return render(request, 'tracker/detail.html',context)
+

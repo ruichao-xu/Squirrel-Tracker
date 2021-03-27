@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.utils import timezone
 
 class Squirrel(models.Model):
 
@@ -9,7 +10,7 @@ class Squirrel(models.Model):
     Hectare_Choices = [('AM','AM'),('PM','PM'),]
     Hectare = models.CharField(max_length = 10, choices = Hectare_Choices)
     Shift = models.CharField(max_length = 10)
-    Date = models.IntegerField()
+    Date = models.DateTimeField(default=timezone.now)
     Hectare_Squirrel_Number = models.IntegerField()
     Age_Choices = [('Adult','Adult'),('Juvenile','Juvenile'),]
     Age = models.CharField(max_length = 20, choices = Age_Choices, blank = True)
@@ -20,21 +21,20 @@ class Squirrel(models.Model):
     Location = models.CharField(max_length = 30)
     Above_Ground_Sighter_Measurement = models.CharField(max_length = 10)
     Specific_Location = models.CharField(max_length = 40)
-    Running_Choices = [('TRUE','TRUE'),('FALSE','FALSE'),]
-    Running = models.CharField(max_length = 10, choices = Running_Choices)
-    Chasing = models.CharField(max_length = 10, choices = Running_Choices)
-    Climbing = models.CharField(max_length = 10, choices = Running_Choices)
-    Eating = models.CharField(max_length = 10, choices = Running_Choices)
-    Foraging = models.CharField(max_length = 10, choices = Running_Choices)
+    Running = models.BooleanField()
+    Chasing = models.BooleanField()
+    Climbing = models.BooleanField()
+    Eating = models.BooleanField()
+    Foraging = models.BooleanField()
     Other_Activities = models.CharField(max_length = 30, blank = True)
-    Kuks = models.CharField(max_length = 10, choices = Running_Choices)
-    Quaas = models.CharField(max_length = 10, choices = Running_Choices)
-    Moans = models.CharField(max_length = 10, choices = Running_Choices)
-    Tail_flags = models.CharField(max_length = 10, choices = Running_Choices)
-    Tail_twitches = models.CharField(max_length = 10, choices = Running_Choices)
-    Approaches = models.CharField(max_length = 10, choices = Running_Choices)
-    Indifferent = models.CharField(max_length = 10, choices = Running_Choices)
-    Runs_from = models.CharField(max_length = 10, choices = Running_Choices)
+    Kuks = models.BooleanField()
+    Quaas = models.BooleanField()
+    Moans = models.BooleanField()
+    Tail_flags = models.BooleanField()
+    Tail_twitches = models.BooleanField()
+    Approaches = models.BooleanField()
+    Indifferent = models.BooleanField()
+    Runs_from = models.BooleanField()
     Other_Interactions = models.CharField(max_length = 40, blank = True)
     Lat_Long = models.CharField(max_length = 80)
 
