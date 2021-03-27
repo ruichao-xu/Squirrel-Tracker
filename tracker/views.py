@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'tracker/home.html',{})
 
 def map(request):
-    squirrels = Squirrel.objects.all()
+    squirrels = Squirrel.objects.all()[:100]
     context = {
             'sightings': squirrels,
             }
