@@ -17,40 +17,48 @@ class Command(BaseCommand):
             reader = csv.DictReader(fp)
             data = list(reader)
     
+        a=[]
         squirrels = []
         for dict_ in data:
-            squirrels.append(Squirrel(
-                X = dict_['X'],
-                Y = dict_['Y'],
-                Unique_Squirrel_ID = dict_['Unique Squirrel ID'],
-                Hectare = dict_['Hectare'],
-                Shift = dict_['Shift'],
-                Date = datetime.strptime(dict_['Date'],'%m%d%Y').replace(tzinfo=pytz.UTC),
-                Hectare_Squirrel_Number = dict_['Hectare Squirrel Number'],
-                Age = dict_['Age'],
-                Primary_Fur_Color = dict_['Primary Fur Color'],
-                Combination_of_Primary_and_Highlight_Color = dict_['Combination of Primary and Highlight Color'],
-                Color_notes = dict_['Color notes'],
-                Location = dict_['Location'],
-                Above_Ground_Sighter_Measurement = dict_['Above Ground Sighter Measurement'],
-                Specific_Location = dict_['Specific Location'],
-                Running = dict_['Running'].capitalize(),
-                Chasing = dict_['Chasing'].capitalize(),
-                Climbing = dict_['Climbing'].capitalize(),
-                Eating = dict_['Eating'].capitalize(),
-                Foraging = dict_['Foraging'].capitalize(),
-                Other_Activities = dict_['Other Activities'],
-                Kuks = dict_['Kuks'].capitalize(),
-                Quaas = dict_['Quaas'].capitalize(),
-                Moans = dict_['Moans'].capitalize(),
-                Tail_flags = dict_['Tail flags'].capitalize(),
-                Tail_twitches = dict_['Tail twitches'].capitalize(),
-                Approaches = dict_['Approaches'].capitalize(),
-                Indifferent = dict_['Indifferent'].capitalize(),
-                Runs_from = dict_['Runs from'].capitalize(),
-                Other_Interactions = dict_['Other Interactions'],
-                Lat_Long = dict_['Lat/Long']
+            if dict_['Unique Squirrel ID'] in a:
+                continue
+            else:
+                squirrels.append(Squirrel(
+                    X = dict_['X'],
+                    Y = dict_['Y'],
+                    Unique_Squirrel_ID = dict_['Unique Squirrel ID'],
+                    Hectare = dict_['Hectare'],
+                    Shift = dict_['Shift'],
+                    Date = datetime.strptime(dict_['Date'],'%m%d%Y').replace(tzinfo=pytz.UTC),
+                    Hectare_Squirrel_Number = dict_['Hectare Squirrel Number'],
+                    Age = dict_['Age'],
+                    Primary_Fur_Color = dict_['Primary Fur Color'],
+                    Combination_of_Primary_and_Highlight_Color = dict_['Combination of Primary and Highlight Color'],
+                    Color_notes = dict_['Color notes'],
+                    Location = dict_['Location'],
+                    Above_Ground_Sighter_Measurement = dict_['Above Ground Sighter Measurement'],
+                    Specific_Location = dict_['Specific Location'],
+                    Running = dict_['Running'].capitalize(),
+                    Chasing = dict_['Chasing'].capitalize(),
+                    Climbing = dict_['Climbing'].capitalize(),
+                    Eating = dict_['Eating'].capitalize(),
+                    Foraging = dict_['Foraging'].capitalize(),
+                    Other_Activities = dict_['Other Activities'],
+                    Kuks = dict_['Kuks'].capitalize(),
+                    Quaas = dict_['Quaas'].capitalize(),
+                    Moans = dict_['Moans'].capitalize(),
+                    Tail_flags = dict_['Tail flags'].capitalize(),
+                    Tail_twitches = dict_['Tail twitches'].capitalize(),
+                    Approaches = dict_['Approaches'].capitalize(),
+                    Indifferent = dict_['Indifferent'].capitalize(),
+                    Runs_from = dict_['Runs from'].capitalize(),
+                    Other_Interactions = dict_['Other Interactions'],
+                    Lat_Long = dict_['Lat/Long']
 
-            ))
+                ))
+                a.append(dict_['Unique Squirrel ID'])
+
+
 
         Squirrel.objects.bulk_create(squirrels)
+

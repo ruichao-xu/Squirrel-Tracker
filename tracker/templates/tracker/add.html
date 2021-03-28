@@ -1,19 +1,38 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset=utf-8>
-        <tittle>My Tittle</tittle>
-    </head>
     <body>
-        <p>paragraph one</p>
-        <p>paragraph two</p>
-        <p>paragraph three</p>
-        <img src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg">
-        <p>
-            <ol>
-                <li>First <a href="https://www.google.com/" class="large">link</a>!</li>
-                <li>Second <a href="https://www.google.com/" class="large">link</a>!</li>
-                <li>Third <a href="https://www.google.com/" class="large">link</a>!</li>
-            </ol>
+        <form id = 'submit' action = '' method = 'POST' class = 'input-group mb-3'>
+		    {% csrf_token %}
+		    <input type = 'text'
+		    name = 'X'
+		    class = 'form-control'
+		    placeholder='Latitude'
+		    aria-label ='Latitude'>
+
+		    <input type = 'text'
+                    name = 'Y'
+                    class = 'form-control'
+                    placeholder='Longitude'
+                    aria-label ='Longitude'>
+
+		    <input type = 'text'
+                    name = 'Unique_Squirrel_ID'
+                    class = 'form-control'
+                    placeholder='Unique Squirrel ID'
+                    aria-label ='Unique Squirrel ID'>
+
+		    <input
+		    name = 'Shift'
+		    placeholder='Shift'>
+
+		    <input
+                    name = 'Date'
+                    placeholder='Date'>
+
+		    <div class = 'input-group-append'>
+			    <button class='btn btn-outline-secondary'  type = 'submit'>Add</button>
+		    </div>
+		    <div id = 'errors' class = 'mb-3'></div>
+	</form>
     </body>
 </html>
