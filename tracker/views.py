@@ -30,8 +30,8 @@ def stat(request):
 
     return render(request, 'tracker/stat.html', context)
 
-def detail(request, squirrel_id):
-    squirrel = get_object_or_404(Squirrel, pk=squirrel_id)
+def detail(request, Unique_Squirrel_ID):
+    squirrel = Squirrel.objects.get(Unique_Squirrel_ID=Unique_Squirrel_ID)
     context = {
             'squirrel':  squirrel,
             }
