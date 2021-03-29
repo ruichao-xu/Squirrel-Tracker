@@ -42,7 +42,16 @@
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
               <h4 class="text-white">About</h4>
-              <p class="text-muted">Track squirrels at centrl park! Let's see what they are doing!</p>
+              <p class="text-muted">Let's track squirrels at centrl park!</p>
+	    </div>
+	    <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="{% url 'tracker:map' %}" class="text-white">Map</a></li>
+                <li><a href="{% url 'tracker:add' %}" class="text-white">Add</a></li>
+                <li><a href="{% url 'tracker:sightings' %}" class="text-white">Sightings</a></li>
+                <li><a href="{% url 'tracker:stats' %}" class="text-white">Stat</a></li>
+              </ul>
 	    </div>
 	  </div>
 	 </div>

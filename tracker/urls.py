@@ -6,9 +6,9 @@ app_name = 'tracker'
 
 urlpatterns = [
      path('', views.index),
-     path('map', views.map),
-     path('sightings', views.sightings),
-     path('sightings/stats', views.stat),
+     path('map', views.map, name = 'map'),
+     path('sightings', views.sightings, name = 'sightings'),
+     path('sightings/stats', views.stat, name = 'stats'),
      path('sightings/<str:Unique_Squirrel_ID>/', views.detail, name='detail'),
      path('sightings/add', views.add, name = 'add'),
 ]

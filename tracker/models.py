@@ -7,18 +7,20 @@ class Squirrel(models.Model):
     X = models.FloatField()
     Y = models.FloatField()
     Unique_Squirrel_ID = models.CharField(max_length = 50)
-    Hectare_Choices = [('AM','AM'),('PM','PM'),]
-    Hectare = models.CharField(max_length = 10, choices = Hectare_Choices, null = True, blank = True)
-    Shift = models.CharField(max_length = 10)
+    Shift_Choices = [('AM','AM'),('PM','PM'),]
+    Hectare = models.CharField(max_length = 10, null = True, blank = True)
+    Shift = models.CharField(max_length = 10, choices = Shift_Choices)
     Date = models.DateTimeField(default=timezone.now)
     Hectare_Squirrel_Number = models.IntegerField(null = True, blank = True)
     Age_Choices = [('Adult','Adult'),('Juvenile','Juvenile'),]
     Age = models.CharField(max_length = 20, choices = Age_Choices, null = True, blank = True)
     Fur_Choices = [('Gray','Gray'),('Cinnamon','Cinnamon'),('Black','Black'),]
     Primary_Fur_Color = models.CharField(max_length=20, choices = Fur_Choices, null = True, blank = True)
+    Highlight_Fur_Color = models.CharField(max_length=30, null = True, blank = True)
     Combination_of_Primary_and_Highlight_Color = models.CharField(max_length=40,null = True, blank = True)
     Color_notes = models.CharField(max_length = 60, null = True, blank = True)
-    Location = models.CharField(max_length = 30, null = True, blank = True)
+    Location_Choices = [('Above Ground','Above Ground'),('Ground Plane','Ground Plane'),]
+    Location = models.CharField(max_length = 30, choices = Location_Choices, null = True, blank = True)
     Above_Ground_Sighter_Measurement = models.CharField(max_length = 10, null = True, blank = True)
     Specific_Location = models.CharField(max_length = 40, null = True, blank = True)
     Running = models.BooleanField(null = True, blank = True)

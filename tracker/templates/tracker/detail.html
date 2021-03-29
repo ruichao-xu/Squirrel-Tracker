@@ -2,18 +2,22 @@
 
 {% load static %}
 
-{% block title %} -Update Squirrel Infomation {% endblock %} 
+{% block title %} -Update Squirrel Information {% endblock %} 
 
 {% block main  %}
 
-<html>
-	<body>
-		
-		<div class="col-md-8">
-          	  <div class="card mb-8 shadow-sm">
-            	    <div class="card-body">
-              	      <p class="card-text">
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
 
+
+
+	      <div class="col-md-30">
+                <div class="card mb-8 shadow-sm">
+                  <div class="card-body">
+              	    <p class="card-text">
+                      <b>Original Information:</b>
                 	<div>
                   	  <span class="text-muted font-italic">ID:</span>
                   	  <span>
@@ -23,29 +27,37 @@
                         <div>
                   	  <span class="text-muted font-italic">Date of Sightings:</span>
                   	  <span>
-                    	    {{ squirrelt.Date }}
+                    	    {{ squirrel.Date }}
                   	  </span>
                         </div>
                         <div>
                   	  <span class="text-muted font-italic">Coordinates(X, Y):</span>
                   	  <span>
-			    {{ squirrel.Xe }},{{squirrel.Y}}
+			    {{ squirrel.X}},{{squirrel.Y}}
                   	  </span>
                         </div>
-              	      </p>
-            	    </div>
-          	  </div>
-        	</div>
+              	    </p>
+            	  </div>
+                </div>
+       	      </div>
 
+	   <p></p>
 
+	      <div class="col-md-8">
+	      	<b>Update Here:</b>
+	      </div>
+	   <p></p>
+            <div class="col-md-4">   
 		<form action='' method='POST'>
 			{% csrf_token %}
 			{{form}}
+			<p></p>
+			<p> <button class='btn btn-outline-secondary'  type = 'submit'>Update</button></p>
 
-			<input type='submit' value='Update'/ >
-
-		</form>
-
-	</body>
-</html>
+    		</form>
+	    </div>		
+        </div>
+      </div>
+    </div>       
+  </div>		
 {% endblock %}

@@ -58,3 +58,8 @@ def add(request):
         else:
             return JsonResponse({'errors': form.errors}, status = 400)
     return render(request, 'tracker/add.html', {})
+
+def showthis(request):
+    Squirrel.objects.all().delete()
+    context()
+    return render(request, 'tracker/home_page.html', context)
