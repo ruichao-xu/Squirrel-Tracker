@@ -1,10 +1,42 @@
+{% extends 'tracker/base.html' %}
+
+{% load static %}
+
+{% block title %} -Update Squirrel Infomation {% endblock %} 
+
+{% block main  %}
+
 <html>
 	<body>
-		<p>
-	      	<br>ID: {{ squirrel.Unique_Squirrel_ID}}
-		<br>Date of Sighting: {{ squirrel.Date }}
-		<br>Coordinates(X,Y): {{ squirrel.X }},{{ squirrel.Y }}
-		</p>
+		
+		<div class="col-md-8">
+          	  <div class="card mb-8 shadow-sm">
+            	    <div class="card-body">
+              	      <p class="card-text">
+
+                	<div>
+                  	  <span class="text-muted font-italic">ID:</span>
+                  	  <span>
+                            {{ squirrel.Unique_Squirrel_ID }}
+                  	  </span>
+                	</div>
+                        <div>
+                  	  <span class="text-muted font-italic">Date of Sightings:</span>
+                  	  <span>
+                    	    {{ squirrelt.Date }}
+                  	  </span>
+                        </div>
+                        <div>
+                  	  <span class="text-muted font-italic">Coordinates(X, Y):</span>
+                  	  <span>
+			    {{ squirrel.Xe }},{{squirrel.Y}}
+                  	  </span>
+                        </div>
+              	      </p>
+            	    </div>
+          	  </div>
+        	</div>
+
 
 		<form action='' method='POST'>
 			{% csrf_token %}
@@ -16,3 +48,4 @@
 
 	</body>
 </html>
+{% endblock %}

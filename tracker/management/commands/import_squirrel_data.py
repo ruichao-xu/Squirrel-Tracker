@@ -17,7 +17,7 @@ class Command(BaseCommand):
             reader = csv.DictReader(fp)
             data = list(reader)
     
-        a=[]
+        a = []
         squirrels = []
         for dict_ in data:
             if dict_['Unique Squirrel ID'] in a:
@@ -61,4 +61,4 @@ class Command(BaseCommand):
 
 
         Squirrel.objects.bulk_create(squirrels)
-
+            

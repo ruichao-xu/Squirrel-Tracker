@@ -1,38 +1,79 @@
-<!doctype html>
-<html lang="en">
-    <body>
-        <form id = 'submit' action = '' method = 'POST' class = 'input-group mb-3'>
+{% extends 'tracker/base.html' %}
+
+{% load static %}
+
+{% block title %}
+- Add Sightings
+{% endblock %}
+
+{% block main %}
+<html>
+ <body>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div>
+            <div class="card mb-3 shadow-sm">
+              <img class="bd-placeholder-img card-img-top"
+                   width="225" height="225" preserveAspectRatio="xMidYMid slice"
+                   focusable="false" role="img" aria-label="{{ pet.name }}"
+                   src="https://www.pbs.org/wgbh/nova/media/original_images/iStock-473012660.jpg"></img>
+            </div>
+          </div>
+	  <form id = 'submit' action = '' method = 'POST' class = 'input-group mb-3'>
 		    {% csrf_token %}
-		    <input type = 'text'
-		    name = 'X'
-		    class = 'form-control'
-		    placeholder='Latitude'
-		    aria-label ='Latitude'>
 
-		    <input type = 'text'
-                    name = 'Y'
-                    class = 'form-control'
-                    placeholder='Longitude'
-                    aria-label ='Longitude'>
+		    <p>
+		    	<input type = 'text'
+		     	name = 'X'
+		     	class = 'form-control'
+		    	placeholder='Latitude'
+		    	aria-label ='Latitude'>
+		    </p>
 
-		    <input type = 'text'
-                    name = 'Unique_Squirrel_ID'
-                    class = 'form-control'
-                    placeholder='Unique Squirrel ID'
-                    aria-label ='Unique Squirrel ID'>
+		    <p>
+			<input type = 'text'
+			name = 'Y'
+			class = 'form-control'
+			placeholder='Longitude'
+			aria-label ='Longitude'>
+		    </p>
 
-		    <input
-		    name = 'Shift'
-		    placeholder='Shift'>
+		    <p>
+			<input type = 'text'
+                    	name = 'Unique_Squirrel_ID'
+                    	class = 'form-control'
+                    	placeholder='Unique Squirrel ID'
+                    	aria-label ='Unique Squirrel ID'>
+		    </p>
 
-		    <input
-                    name = 'Date'
-                    placeholder='Date'>
+		    <p>
+		    	<input type = 'text'
+			name = 'Shift'
+			class = 'form-control'
+		    	placeholder='Shift'
+			aria-label = 'Shift'>
+		    </p>
+
+		    <p>
+			<input type = 'text'
+			name = 'Date'
+		   	class = 'form-control'
+			placeholder='Date'
+			aria_label = 'Shift'>
+		    </p>
 
 		    <div class = 'input-group-append'>
-			    <button class='btn btn-outline-secondary'  type = 'submit'>Add</button>
+			    <p> <button class='btn btn-outline-secondary'  type = 'submit'>Add</button></p>
 		    </div>
 		    <div id = 'errors' class = 'mb-3'></div>
-	</form>
-    </body>
+	    </form>
+         </div>
+       </div>
+    </div>
+  </div>
+ </body>
 </html>
+
+{% endblock %}
