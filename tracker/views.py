@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 from .forms import AddSightingsForm
 from .forms import UpdateForm
+from django.db.models import Avg, Count, When, Case, Q
 
 def index(request):
     return render(request, 'tracker/home.html',{})
@@ -26,9 +27,14 @@ def sightings(request):
     return render(request, 'tracker/sightings.html',context)
 
 def stat(request):
-    squirrels = Squirrel.objects.all()
+    stats  =[{'Average Latitude of Sightings': Squirrel.objects.aggregate(Avg('X'))},
+            {'Average Longitude of Sightings': Squirrel.objects.aggregate(Avg('Y'))},
+            {'Number of Sightings where Squirrels are Adult': Squirrel.objects.filter(Age = 'Adult').count()},
+            {'Number of Sightings where Primary Fur Color of Squirrels are Gray': Squirrel.objects.filter(Primary_Fur_Color = 'Gray').count()},
+            {'Number of Sightings where Squirrels are Chasing': Squirrel.objects.filter(Chasing = True).count()},
+            ]
     context = {
-            'squirrels': squirrels,
+            'stats': stats,
             }
 
     return render(request, 'tracker/stat.html', context)

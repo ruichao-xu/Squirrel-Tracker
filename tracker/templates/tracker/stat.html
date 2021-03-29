@@ -1,17 +1,26 @@
 {% extends 'tracker/base.html' %}
 {% load static %}
-{% block title %} -Update Squirrel Information {% endblock %} 
+{% block title %} -Squirrel Stats {% endblock %} 
 {% block main  %}
 
 
 <!doctype html>
 <html>
-        <body>
-        <ul>
-                {% for squirrel in squirrels %}
-		<li>Latitude: {{  squirrel.X }} Longitude: {{squirrel.Y}} ID: {{squirrel.Unique_Squirrel_ID}} Date: {{squirrel.Date}} Shift: {{squirrel.Shift}} </li>
-                {% endfor %}
-	</ul>
+	<body>
+	  <div class="col-md-30">
+                <div class="card mb-8 shadow-sm">
+                  <div class="card-body">
+                    <p class="card-text">
+                      <b>Squirrels Status Information</b>
+        	      <ul>
+                	{% for stat in stats %}
+			<li>{{stat}}</li>
+                	{% endfor %}
+		      </ul>
+		    </p>
+		  </div>
+		</div>
+	  </div>
         </body>
 </html>
 {% endblock %}

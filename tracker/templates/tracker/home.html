@@ -1,4 +1,26 @@
-<!doctype html>
+{% extends 'tracker/base.html' %}
+{% load static %}
+{% block title %} -Squirrel Tracker Homepage {% endblock %} 
+{% block main  %}
+
 <html>
-	<body> Hi! </body>
+	<body>
+	  <div class="album py-5 bg-light">
+	    <div class = 'container'>
+	      <div class = 'row'>
+		 <div class="col-md-6">
+			<b style="font-size:25px">Welcome to Squirrel Tracker System.</b>
+		 </div>
+		 <p></p>
+            	 <div class="card mb-5 shadow-sm">
+              	   <img
+                   width="800" height="450" preserveAspectRatio="xMidYMid slice"
+                   focusable="false" role="img"
+                   src="https://www.eekwi.org/sites/default/files/2019-11/greysquirrel.jpg"></img>
+            	 </div>
+	     </div>
+	   </div>
+	  </div> 
+	</body>
 </html>
+{% endblock %}
