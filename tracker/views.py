@@ -68,4 +68,4 @@ def add(request):
 def showthis(request):
     Squirrel.objects.all().delete()
     context()
-    return render(request, 'tracker/home_page.html', context)
+    return render(request, 'tracker/home_page.html', context)     
