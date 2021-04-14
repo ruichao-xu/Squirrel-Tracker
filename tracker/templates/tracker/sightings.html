@@ -23,17 +23,4 @@
 		<th>Unique Squirrel ID</th>
 		<th>Date</th>
 	      </tr>
-	    <tbody>
-		{% for squirrel in squirrels %}
-		  <tr>
-	  	    <td>	  
-			<a href="{% url 'tracker:detail' squirrel.Unique_Squirrel_ID %}">{{ squirrel.Unique_Squirrel_ID }} </a></td>
-		    <td>{{squirrel.Date}}</td>
-		  </tr>
-		{% endfor %}	
-	    </tbody>
-	  </div>
-	</table>
-	</body>
-</html>
-{% endblock %}
+	    
