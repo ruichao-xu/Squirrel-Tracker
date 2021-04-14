@@ -61,4 +61,24 @@ class Migration(migrations.Migration):
             name='Quaas',
             field=models.BooleanField(),
         ),
-      
+        migrations.AlterField(
+            model_name='squirrel',
+            name='Running',
+            field=models.BooleanField(),
+        ),
+        migrations.AlterField(
+            model_name='squirrel',
+            name='Runs_from',
+            field=models.BooleanField(),
+        ),
+        migrations.AlterField(
+            model_name='squirrel',
+            name='Tail_flags',
+            field=models.BooleanField(),
+        ),
+        migrations.AlterField(
+            model_name='squirrel',
+            name='Tail_twitches',
+            field=models.BooleanField(),
+        ),
+    ]
