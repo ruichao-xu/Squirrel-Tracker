@@ -28,4 +28,4 @@ Section Number: Section 2
 
 Group Members: Guanyu Xin, Ruichao Xu
 
-UNIs: [**[gx2151]**](URL), [**[rx2184]**](https://github.com/ruichao-xu) 
+UNIs: [**[gx2151]**](https://github.com/gx2151), [**[rx2184]**](https://github.com/ruichao-xu) 
