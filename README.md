@@ -10,11 +10,15 @@ The official description for this project is in [**Squirrel Tracker**](https://d
 
 ## Views
 
-### Location Map
-### Sightings
-### Sighting Update
-### Sighting Creation
-### Sightings Stats
+Location Map
+
+Sightings
+
+Sighting Update
+
+Sighting Creation
+
+Sightings Stats
 
 ## Contributors
 
