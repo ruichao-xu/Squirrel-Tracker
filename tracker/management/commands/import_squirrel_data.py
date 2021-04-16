@@ -29,7 +29,7 @@ class Command(BaseCommand):
                     Unique_Squirrel_ID = dict_['Unique Squirrel ID'],
                     Hectare = dict_['Hectare'],
                     Shift = dict_['Shift'],
-                    Date = dict_['Date'],
+                    Date = dict_['Date'][4:8]+'-'+ dict_['Date'][0:2]+'-'+ dict_['Date'][2:4],
                     Hectare_Squirrel_Number = dict_['Hectare Squirrel Number'],
                     Age = dict_['Age'],
                     Primary_Fur_Color = dict_['Primary Fur Color'],
